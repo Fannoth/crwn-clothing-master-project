@@ -4,8 +4,8 @@
 
  ### Hello, everyone!
  This is a repository for a project I am writing as part of my course study [Click](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/)
- 
- ### Current progression of 71 out of 384 lessons.
+
+ ### Current progression of 81 out of 384 lessons.
 
 
 
