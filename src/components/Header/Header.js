@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
+
 export const Header = () => {
   return (
     <div className="header">
@@ -10,14 +11,14 @@ export const Header = () => {
         <Logo className="logo" />
       </Link>
       <div className="options">
-        <Link to="/" className="option">
-          MAIN PAGE
-        </Link>
         <Link to="/shop" className="option">
           SHOP
         </Link>
         <Link to="/contact" className="option">
           CONTACT
+        </Link>
+        <Link to="/sign-in" className="option">
+          SIGN IN
         </Link>
       </div>
     </div>

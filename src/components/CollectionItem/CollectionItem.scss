@@ -5,12 +5,14 @@
     height: 350px;
     align-items: center;
 
+
     .image {
       width: 100%;
       height: 95%;
       background-size: cover;
       background-position: center;
       margin-bottom: 5px;
+      border: 1px solid black;
     }
 
     .collection-footer {
