@@ -1,14 +1,15 @@
 body {
-  font-family: 'Darker Grotesque', sans-serif;
-  font-family: 'Lexend Peta', sans-serif;
+  font-family: "Darker Grotesque", sans-serif;
+  font-family: "Lexend Peta", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 20px 60px;
-  }
+}
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
 
-  * {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}

@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { ShopPage } from "./pages/Shop/Shop";
 import { Header } from "./components/Header/Header";
 import { SignInAndSingUp } from "./pages/SingInAndSingUp/SignInAndSingUp";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -13,16 +13,25 @@ const App = () => {
   let unsubcribeFromAuth = null;
 
   useEffect(() => {
-    unsubcribeFromAuth = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-      console.log(user);
+    unsubcribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      }
+      setCurrentUser(userAuth);
     });
     return () => unsubcribeFromAuth();
-  }, [currentUser]);
+  }, []);
 
   return (
     <div>
-      <Header currentUser={currentUser}/>
+      <Header currentUser={currentUser} />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
