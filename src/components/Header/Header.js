@@ -10,6 +10,7 @@ export const Header = ({ currentUser }) => {
       <Link to="/" className="logo-container">
         <Logo className="logo" />
       </Link>
+      {/* {currentUser ? <h2>Logged as: {currentUser.displayName}</h2> : null}  */}
       <div className="options">
         <Link to="/shop" className="option">
           SHOP

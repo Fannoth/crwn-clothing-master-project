@@ -49,7 +49,6 @@ export const SingUp = () => {
       ...newUser,
       [event.target.name]: value,
     });
-    console.log(newUser);
   };
 
   return (
