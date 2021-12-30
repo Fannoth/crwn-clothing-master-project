@@ -1,6 +1,6 @@
 import React from "react";
 import { SignIn } from "../../components/SignIn/SignIn";
-import { SingUp } from "../../components/SingUp/SingUp";
+import { SingUp } from "../../components/SingUp/SignUp";
 import "./SignInAndSingUp.scss";
 
 export const SignInAndSingUp = () => {
