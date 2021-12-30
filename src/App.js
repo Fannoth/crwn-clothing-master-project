@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -10,9 +10,10 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/User/user.actions";
 
 const App = ({ setCurrentUser, currentUser }) => {
-  var unsubscribeFromAuth = null;
+  var unsubscribeFromAuth = useRef(null);
+
   useEffect(() => {
-    unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+    unsubscribeFromAuth.current = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -27,7 +28,7 @@ const App = ({ setCurrentUser, currentUser }) => {
       setCurrentUser(userAuth);
     });
     return () => unsubscribeFromAuth();
-  }, []);
+  }, [setCurrentUser]);
 
   return (
     <div>
