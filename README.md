@@ -2,12 +2,13 @@
 
 # In Progress
 
- ### Hello, everyone!
- This is a repository for a project I am writing as part of my course study [Click](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/)
+### Hello, everyone!
 
- ### Current progression of 123 out of 384 lessons.
+This is a repository for a project that I am writing as part of my course study [Click](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/)
 
+In this course Yihua makes class components, while I make function components, my solutions can be found in the "questions and answers" under each video in the course.
 
+### Current progression of 126 out of 384 lessons.
 
 # Getting Started with Create React App
 
