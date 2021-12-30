@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import { Routes, Route } from "react-router-dom";
@@ -6,14 +6,15 @@ import { ShopPage } from "./pages/Shop/Shop";
 import Header from "./components/Header/Header";
 import { SignInAndSingUp } from "./pages/SingInAndSingUp/SignInAndSingUp";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/User/user.actions";
 
-const App = () => {
-  const [currentUser, setCurrentUser] = useState(null);
-
-  let unsubcribeFromAuth = null;
+const App = (props) => {
+  var unsubscribeFromAuth = null;
 
   useEffect(() => {
-    unsubcribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+    const { setCurrentUser } = props;
+    unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -24,14 +25,15 @@ const App = () => {
           });
         });
       }
+
       setCurrentUser(userAuth);
     });
-    return () => unsubcribeFromAuth();
+    return () => unsubscribeFromAuth();
   }, []);
 
   return (
     <div>
-      <Header currentUser={currentUser} />
+      <Header />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
@@ -41,4 +43,8 @@ const App = () => {
   );
 };
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(null, mapDispatchToProps)(App);
