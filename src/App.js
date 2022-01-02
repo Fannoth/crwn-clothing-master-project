@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ShopPage } from "./pages/Shop/Shop";
 import Header from "./components/Header/Header";
@@ -8,6 +9,9 @@ import { SignInAndSingUp } from "./pages/SingInAndSingUp/SignInAndSingUp";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/User/user.actions";
+import { selectCurrentUser } from "./redux/User/user.selectors";
+import { createStructuredSelector } from "reselect";
+
 
 const App = ({ setCurrentUser, currentUser }) => {
   var unsubscribeFromAuth = useRef(null);
@@ -41,13 +45,14 @@ const App = ({ setCurrentUser, currentUser }) => {
           path="/sign-in"
           element={currentUser ? <Navigate to="/" /> : <SignInAndSingUp />}
         />
+        <Route exact path="/checkout" element={<CheckoutPage />} />
       </Routes>
     </div>
   );
 };
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
