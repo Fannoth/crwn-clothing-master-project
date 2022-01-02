@@ -6,7 +6,7 @@ export const CheckoutItem = ({cartItem : {imageUrl, name, price, quantity}}) => 
   return (
     <div className="checkout-item">
       <div className="image-container">
-          <img src={`${imageUrl}`} />
+          <img src={`${imageUrl}`} alt="item" />
       </div>
       <span className="name">{name}</span>
       <span className="quantity">{quantity}</span>
