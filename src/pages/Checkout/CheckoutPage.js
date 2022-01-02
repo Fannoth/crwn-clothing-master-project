@@ -6,10 +6,9 @@ import {
   selectCartTotal,
 } from "../../redux/Cart/cart.selectors";
 import "./CheckoutPage.scss";
-import { CheckoutItem } from "../../components/CheckoutItem/CheckoutItem";
+import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
 
-
-const CheckoutPage = ({ cartItems, total,  }) => {
+const CheckoutPage = ({ cartItems, total }) => {
   return (
     <div className="checkout-page">
       <div className="checkout-header">
@@ -29,9 +28,11 @@ const CheckoutPage = ({ cartItems, total,  }) => {
           <span>Remove</span>
         </div>
       </div>
-      {cartItems.map((cartItem) => (
-        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-      ))}
+      {cartItems.length
+        ? cartItems.map((cartItem) => (
+            <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+          ))
+        : <span className="empty-message">Your checkout is empty</span>}
       <div className="total">
         <span className="total">TOTAL: ${total}</span>
       </div>
