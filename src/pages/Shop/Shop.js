@@ -1,16 +1,10 @@
 import React from "react";
-import SHOP_DATA from "./shop.data";
-import { CollectionPreview } from "../../components/CollectionPreview/CollectionPreview";
-const data = SHOP_DATA;
+import CollectionsOverview from "../../components/CollectionsOverview/CollectionsOverview";
 
-export const ShopPage = () => {
-  return (
-    <div className="shop-page">
-        {
-            data.map(({id, ...otherCollection}) => {
-               return <CollectionPreview key={id} {...otherCollection} />
-            })
-        }
-    </div>
-  );
-};
+const ShopPage = () => (
+  <div className="shop-page">
+    <CollectionsOverview />
+  </div>
+);
+
+export default ShopPage;
