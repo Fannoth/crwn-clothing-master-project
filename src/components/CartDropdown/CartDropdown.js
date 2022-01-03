@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import "./CartDropdown.scss";
 import { CustomButton } from "../CustomButton/CustomButton";
 import { CartItem } from "../CartItem/CartItem";
-import { selectCartItems } from "../../redux/Cart/cart.selectors";
+import { selectCartItems } from "../../redux/cart/cart.selectors";
 import { createStructuredSelector } from "reselect";
 import { useNavigate } from "react-router-dom";
-import { toggleCartHidden } from "../../redux/Cart/cart.actions";
+import { toggleCartHidden } from "../../redux/cart/cart.actions";
 
 const CartDropdown = ({ cartItems, dispatch }) => {
   let navigate = useNavigate();
