@@ -88,7 +88,10 @@ export const SingUp = () => {
           label="Confirm Password"
           requierd
         ></FormInput>
+      <div className="buttons">
+
         <CustomButton type="submit">SIGN UP</CustomButton>
+      </div>
       </form>
     </div>
   );

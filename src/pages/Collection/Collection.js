@@ -8,16 +8,16 @@ import "./Collection.scss";
 
 const CollectionPage = ({ collection, changeParams }) => {
   let params = useParams();
-
+ const {title, items} = collection
   useEffect(() => {
     changeParams(params.categoryId);
   }, []);
 
   return (
     <div className='collection-page'>
-      <h2 className='title'>{collection.title}</h2>
+      <h2 className='title'>{title}</h2>
       <div className='items'>
-        {collection.items.map(item => (
+        {items.map(item => (
           <CollectionItem key={item.id} item={item} />
         ))}
       </div>

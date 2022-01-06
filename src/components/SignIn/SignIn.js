@@ -36,7 +36,7 @@ export const SignIn = () => {
       <h2 className="title">I already have an account</h2>
       <span>Sign in with your email and password</span>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="sign-in-form">
         <FormInput
           name="email"
           type="email"
