@@ -8,8 +8,8 @@ import Header from "./components/Header/Header";
 import { SignInAndSingUp } from "./pages/SingInAndSingUp/SignInAndSingUp";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
-import { setCurrentUser } from "./redux/user/user.actions";
-import { selectCurrentUser } from "./redux/user/user.selectors";
+import { setCurrentUser } from "./redux/User/user.actions";
+import { selectCurrentUser } from "./redux/User/user.selectors";
 import { createStructuredSelector } from "reselect";
 
 const App = ({ setCurrentUser, currentUser }) => {

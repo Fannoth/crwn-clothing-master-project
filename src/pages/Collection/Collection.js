@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { connect } from "react-redux";
 import CollectionItem from "../../components/CollectionItem/CollectionItem";
-import { selectCollection } from "../../redux/shop/shop.selectors";
-import { changeShopParams } from "../../redux/shop/shop.actions";
+import { selectCollection } from "../../redux/Shop/shop.selectors";
+import { changeShopParams } from "../../redux/Shop/shop.actions";
 import "./Collection.scss";
 
 const CollectionPage = ({ collection, changeParams }) => {
