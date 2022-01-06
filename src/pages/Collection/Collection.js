@@ -11,7 +11,7 @@ const CollectionPage = ({ collection, changeParams }) => {
  const {title, items} = collection
   useEffect(() => {
     changeParams(params.categoryId);
-  }, []);
+  }, [changeParams, params.categoryId]);
 
   return (
     <div className='collection-page'>
