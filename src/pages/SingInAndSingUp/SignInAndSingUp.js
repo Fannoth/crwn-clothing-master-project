@@ -11,7 +11,7 @@ export const SignInAndSingUp = () => {
         <SingUp />
       </div>
       <span className="test-alert">
-        Please use following data for test login:
+        Please use your gmail account for sign in or use following data for test login:
         <br />
         email: <strong>test123@gmail.com</strong>
         <br />
