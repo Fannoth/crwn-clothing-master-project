@@ -1,6 +1,19 @@
-.sign-in-and-sign-up {
-  width: 1000px;
+.wrapper {
   display: flex;
-  justify-content: space-around;
-  margin: 30px auto;
+  flex-direction: column;
+  width: 100vh;
+  margin: 0 auto;
+  .sign-in-and-sign-up {
+    width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto;
+  }
+  .test-alert {
+    margin: 50px auto;
+    color: red;
+    text-align: center;
+    font-size: 24px;
+    font-family: monospace;
+  }
 }
