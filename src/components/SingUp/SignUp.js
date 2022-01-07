@@ -61,7 +61,7 @@ export const SingUp = () => {
           name="displayName"
           value={displayName}
           onChange={handleChange}
-          label="Display Name"
+          label="display Name"
           requierd
         ></FormInput>
         <FormInput
@@ -69,7 +69,7 @@ export const SingUp = () => {
           name="email"
           value={email}
           onChange={handleChange}
-          label="Email"
+          label="email"
           requierd
         ></FormInput>
         <FormInput
@@ -77,7 +77,7 @@ export const SingUp = () => {
           name="password"
           value={password}
           onChange={handleChange}
-          label="Password"
+          label="password"
           requierd
         ></FormInput>
         <FormInput
@@ -85,13 +85,12 @@ export const SingUp = () => {
           name="confirmPassword"
           value={confirmPassword}
           onChange={handleChange}
-          label="Confirm Password"
+          label="confirm Password"
           requierd
         ></FormInput>
-      <div className="buttons">
-
-        <CustomButton type="submit">SIGN UP</CustomButton>
-      </div>
+        <div className="buttons">
+          <CustomButton type="submit">SIGN UP</CustomButton>
+        </div>
       </form>
     </div>
   );
