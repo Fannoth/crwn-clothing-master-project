@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/User/user.actions";
 import { selectCurrentUser } from "./redux/User/user.selectors";
 import { createStructuredSelector } from "reselect";
+import { ContactPage } from "./pages/Contact/ContactPage";
 
 const App = ({ setCurrentUser, currentUser }) => {
   var unsubscribeFromAuth = useRef(null);
@@ -40,6 +41,7 @@ const App = ({ setCurrentUser, currentUser }) => {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="shop/*" element={<ShopPage />} />
         <Route exact path="/checkout" element={<CheckoutPage />} />
+        <Route exact path="/contact" element={<ContactPage />} />
         <Route
           exact
           path="/sign-in"
