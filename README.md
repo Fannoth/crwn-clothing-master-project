@@ -1,6 +1,6 @@
 # crwn-clothing-master-project
 
-## [Live server](https://crwnclothingfannoth.herokuapp.com/)
+## [Live server](https://crwn-clothing-fannoth.netlify.app/)
 # In Progress
 
 ### Hello, everyone!
