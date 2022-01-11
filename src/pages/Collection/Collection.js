@@ -4,7 +4,11 @@ import { connect } from "react-redux";
 import CollectionItem from "../../components/CollectionItem/CollectionItem";
 import { selectCollection } from "../../redux/Shop/shop.selectors";
 import { changeShopParams } from "../../redux/Shop/shop.actions";
-import "./Collection.scss";
+import {
+  CollectionPageContainer,
+  CollectionTitle,
+  CollectionItemsContainer
+} from './Collection.styled';
 
 const CollectionPage = ({ collection, changeParams }) => {
   let params = useParams();
@@ -14,14 +18,14 @@ const CollectionPage = ({ collection, changeParams }) => {
   }, [changeParams, params.categoryId]);
 
   return (
-    <div className='collection-page'>
-      <h2 className='title'>{title}</h2>
-      <div className='items'>
+    <CollectionPageContainer>
+      <CollectionTitle>{title}</CollectionTitle>
+      <CollectionItemsContainer>
         {items.map(item => (
           <CollectionItem key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </CollectionItemsContainer>
+    </CollectionPageContainer>
   );
 };
 

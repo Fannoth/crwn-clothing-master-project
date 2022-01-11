@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import { CustomButton } from "../CustomButton/CustomButton";
 import { FormInput } from "../FormInput/FormInput";
-import "./SignUp.scss";
+import {
+  SignUpContainer,
+  SignUpTitle,
+  ButtonsBarContainer,
+} from "./SignUp.styled";
 
 export const SingUp = () => {
   const [newUser, setNewUser] = useState({
@@ -52,8 +56,8 @@ export const SingUp = () => {
   };
 
   return (
-    <div className="sign-up">
-      <h2 className="title">I do not have a account</h2>
+    <SignUpContainer>
+      <SignUpTitle>I do not have a account</SignUpTitle>
       <span>Sign up with your email and password</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <FormInput
@@ -61,7 +65,7 @@ export const SingUp = () => {
           name="displayName"
           value={displayName}
           onChange={handleChange}
-          label="display Name"
+          label="display name"
           requierd
         ></FormInput>
         <FormInput
@@ -88,10 +92,10 @@ export const SingUp = () => {
           label="confirm Password"
           requierd
         ></FormInput>
-        <div className="buttons">
+        <ButtonsBarContainer>
           <CustomButton type="submit">SIGN UP</CustomButton>
-        </div>
+        </ButtonsBarContainer>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };

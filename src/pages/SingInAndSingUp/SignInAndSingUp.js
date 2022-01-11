@@ -1,22 +1,27 @@
 import React from "react";
 import { SignIn } from "../../components/SignIn/SignIn";
 import { SingUp } from "../../components/SingUp/SignUp";
-import "./SignInAndSingUp.scss";
+import {
+  Wrapper,
+  SignInAndSignUpContainer,
+  TextAlert,
+} from "./SignInAndSingUp.styled";
 
 export const SignInAndSingUp = () => {
   return (
-    <div className="wrapper">
-      <div className="sign-in-and-sign-up">
+    <Wrapper>
+      <SignInAndSignUpContainer>
         <SignIn />
         <SingUp />
-      </div>
-      <span className="test-alert">
-        Please use your gmail account for sign in or use following data for test login:
+      </SignInAndSignUpContainer>
+      <TextAlert>
+        Please use your gmail account for sign in or use following data for test
+        login:
         <br />
         email: <strong>test123@gmail.com</strong>
         <br />
         password: <strong>test123</strong>
-      </span>
-    </div>
+      </TextAlert>
+    </Wrapper>
   );
 };
