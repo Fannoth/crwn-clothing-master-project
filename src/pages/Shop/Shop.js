@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import CollectionsOverview from "../../components/CollectionsOverview/CollectionsOverview";
 import Collection from "../Collection/Collection";
@@ -8,22 +8,41 @@ import {
 } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { updateCollections } from "../../redux/Shop/shop.actions";
+import WithSpinner from "../../components/WithSpinner/WithSpinner";
+
+const CollectoinsOverviewWithSpinner = WithSpinner(CollectionsOverview);
+const CollectionPageWithSpinner = WithSpinner(Collection);
 
 const ShopPage = ({ updateCollections }) => {
+  const [isLoading, setIsLoading] = useState(true);
   var unsubscribeFromSnapshot = useRef(null);
   useEffect(() => {
     const collecitonRef = firestore.collection("collections");
 
-    unsubscribeFromSnapshot.current = collecitonRef.onSnapshot(async (snapshot) => {
-      const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-      updateCollections(collectionsMap);
-    });
+    unsubscribeFromSnapshot.current = collecitonRef.onSnapshot(
+      async (snapshot) => {
+        const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+        updateCollections(collectionsMap);
+        setIsLoading(false);
+      }
+    );
   }, [updateCollections, unsubscribeFromSnapshot]);
   return (
-    <div className="shop-page">
+    <div>
       <Routes>
-        <Route path="/" element={<CollectionsOverview />} />
-        <Route path=":categoryId" element={<Collection />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <CollectoinsOverviewWithSpinner isLoading={isLoading}/>
+          }
+        />
+        <Route
+          path=":categoryId"
+          element={
+            <CollectionPageWithSpinner isLoading={isLoading}/>
+          }
+        />
       </Routes>
     </div>
   );

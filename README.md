@@ -9,7 +9,7 @@ This is a repository for a project that I am writing as part of my course study 
 
 In this course Yihua makes class components, while I make function components, my solutions can be found in the "questions and answers" under each video in the course.
 
-### Current progression of 178 out of 384 lessons.
+### Current progression of 190 out of 384 lessons.
 
 # Getting Started with Create React App
 
