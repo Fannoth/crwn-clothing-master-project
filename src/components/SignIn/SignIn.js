@@ -5,8 +5,8 @@ import { CustomButton } from "../CustomButton/CustomButton";
 import {
   SignInContainer,
   SignInTitle,
-  ButtonsBarContainer
-} from './SignIn.styled';
+  ButtonsBarContainer,
+} from "./SignIn.styled";
 
 export const SignIn = () => {
   const [state, setState] = useState({
