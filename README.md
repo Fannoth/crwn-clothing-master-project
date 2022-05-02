@@ -3,14 +3,6 @@
 ## [Live server](https://crwn-clothing-fannoth.netlify.app/)
 # In Progress
 
-### Hello, everyone!
-
-This is a repository for a project that I am writing as part of my course study [Click](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/)
-
-In this course Yihua makes class components, while I make function components, my solutions can be found in the "questions and answers" under each video in the course.
-
-### Current progression of 190 out of 384 lessons.
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
